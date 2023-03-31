@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Input } from "@chakra-ui/react";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 type CustomTableProps = {
   variant?: "simple" | "striped" | "unstyled";
@@ -31,14 +31,11 @@ export default function CustomTable({
   title,
   data,
 }: CustomTableProps) {
-
   const navigate = useNavigate();
 
   return (
     <TableContainer>
-      <Box mb={4}>
-        
-      </Box>
+      <Box mb={4}></Box>
       <Table variant="striped" colorScheme="blue">
         <Thead>
           <Tr>
@@ -49,7 +46,12 @@ export default function CustomTable({
         </Thead>
         <Tbody>
           {data.map((item: any, index: number) => (
-            <Tr key={index} onClick={() => navigate(`/detail/${item.id}`)}>
+            <Tr
+              key={index}
+              onClick={() =>
+                navigate(`/detail/${item.id}`, { state: { data: item } })
+              }
+            >
               <Td>
                 <Avatar src={item.icon} />
                 {item.id}
