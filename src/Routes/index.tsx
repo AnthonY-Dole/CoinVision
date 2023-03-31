@@ -17,11 +17,10 @@ export default function Router() {
   return useRoutes([
     {
       path: "/",
-
       element: <AppLayout />,
       children: [
         {
-          path: "app",
+          path: "/",
           element: <Home />,
         },
       ],
