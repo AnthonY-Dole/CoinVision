@@ -57,6 +57,16 @@ const Detail = ({}: Props) => {
               >
                 1M
               </CustomButton>
+              <CustomButton
+                variant="primary"
+                onClick={() => {
+                  getChart(id, "1y").then((res) => {
+                    setData(res.data);
+                  });
+                }}
+              >
+                1Y
+              </CustomButton>
             </Stack>
           </div>
         </section>

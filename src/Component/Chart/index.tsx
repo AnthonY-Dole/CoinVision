@@ -49,7 +49,7 @@ const Chart = (props: ChartProps) => {
         </defs>
         <XAxis dataKey="name" />
         <YAxis />
-        <CartesianGrid strokeDasharray="5 3" />
+
         <Tooltip />
         <Area
           type="monotone"
