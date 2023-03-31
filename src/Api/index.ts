@@ -27,4 +27,9 @@ const ping = async () => {
   return response;
 };
 
-export { ping };
+const getCoins = async () => {
+  const response = await axiosClient.get("/coins?skip=0&limit=20&currency=EUR");
+  return response;
+};
+
+export { ping, getCoins };

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,3 +14,32 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.fpage{
+  width: 100%;
+  background-color: rgb(138, 138, 138);
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.s1 {
+  height: 60px;
+}
+.s2 {
+  height: 60px;
+}
+.s3 {
+  height: 60px;
+}
+.lisR {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+}
+#cir {
+  width: 50px;
+  height: 50px;
+  border-radius: 120px;
+  border: 2px solid black;
+}
