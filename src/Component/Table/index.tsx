@@ -14,22 +14,31 @@ import {
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Input } from "@chakra-ui/react";
+
+import { useState } from 'react';
+
 type CustomTableProps = {
   variant?: "simple" | "striped" | "unstyled";
   children?: any;
   title: string[];
   data?: any;
 };
+
 export default function CustomTable({
   variant = "striped",
   children,
   title,
   data,
 }: CustomTableProps) {
+
   const navigate = useNavigate();
 
   return (
     <TableContainer>
+      <Box mb={4}>
+        
+      </Box>
       <Table variant="striped" colorScheme="blue">
         <Thead>
           <Tr>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import CustomTable from "@/Component/Table";
 import { getCoins } from "@/Api";
+import { Input } from "@chakra-ui/react";
 type Props = {};
 
 const Home = ({}: Props) => {
@@ -14,11 +15,16 @@ const Home = ({}: Props) => {
       setData(res.data.coins);
     });
   }, []);
+  const [searchId, setSearchId] = useState('');
 
+ 
   return (
     <div>
-      <CustomTable title={title} data={data} />
+
+       <Input variant='outline' placeholder='Search' onChange={(e) => setSearchId(e.target.value)} />
+      <CustomTable title={title} data={searchId ? data.filter((item: any) => item.id.includes(searchId)) : data} />
       <Footer/>
+
     </div>
   );
 };
