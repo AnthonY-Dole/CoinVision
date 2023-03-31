@@ -26,18 +26,16 @@ export default function Router() {
           element: <Home />,
         },
         {
-          path:"/detail/:id",
-          element : <Detail />
+          path: "/detail/:id",
+          element: <Detail />,
         },
-
       ],
     },
-    
+
     {
       path: "/*",
 
       element: <PageError />,
-     
     },
   ]);
 }
