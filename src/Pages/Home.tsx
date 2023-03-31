@@ -1,18 +1,22 @@
-import React from "react";
-import Button from "@/Component/Button";
+import React, { useEffect, useState } from "react";
 
-import { ping } from "@/Api";
+import CustomTable from "@/Component/Table";
+import { getCoins } from "@/Api";
 type Props = {};
 
 const Home = ({}: Props) => {
-  React.useEffect(() => {
-    ping().then((res) => {
-      console.log(res);
+  const [data, setData] = useState([]);
+  const title = ["Monnaie", "Prix", "1h", "24h", "7j", "24h Volume", "Mkt Cap"];
+
+  useEffect(() => {
+    getCoins().then((res) => {
+      setData(res.data.coins);
     });
   }, []);
+
   return (
     <div>
-      <Button variant="solid">Button</Button>
+      <CustomTable title={title} data={data} />
     </div>
   );
 };
