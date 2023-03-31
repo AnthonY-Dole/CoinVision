@@ -12,7 +12,10 @@ import { Input } from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
 
 
-export default function withAction() {
+export default function Nav() {
+
+  
+
 
   return (
     <>
@@ -28,7 +31,7 @@ export default function withAction() {
               />
             </Link>
 
-            <Input variant='outline' placeholder='Search'  />
+            
           </HStack>
           
         </Flex>

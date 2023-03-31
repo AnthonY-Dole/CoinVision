@@ -13,20 +13,30 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+import { Input } from "@chakra-ui/react";
+
+import { useState } from 'react';
+
 type CustomTableProps = {
   variant?: "simple" | "striped" | "unstyled";
   children?: any;
   title: string[];
   data?: any;
 };
+
 export default function CustomTable({
   variant = "striped",
   children,
   title,
   data,
 }: CustomTableProps) {
+ 
+
   return (
     <TableContainer>
+      <Box mb={4}>
+        
+      </Box>
       <Table variant="striped" colorScheme="blue">
         <Thead>
           <Tr>
