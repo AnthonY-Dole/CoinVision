@@ -21,7 +21,7 @@ export default function NotFound() {
         The page you're looking for does not seem to exist
       </Text>
 
-      <Button as={Link} to="/app" size="lg"
+      <Button as={Link} to="/" size="lg"
         colorScheme="teal"
         bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
         color="white"
