@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import Footer from "@/Component/Footer";
+import { useEffect, useState } from "react";
 
 import CustomTable from "@/Component/Table";
 import { getCoins } from "@/Api";
@@ -19,8 +20,11 @@ const Home = ({}: Props) => {
  
   return (
     <div>
+
        <Input variant='outline' placeholder='Search' onChange={(e) => setSearchId(e.target.value)} />
       <CustomTable title={title} data={searchId ? data.filter((item: any) => item.id.includes(searchId)) : data} />
+      <Footer/>
+
     </div>
   );
 };
