@@ -32,6 +32,7 @@ export default function CustomTable({
   const navigate = useNavigate();
 
   return (
+
       <TableContainer 
         mt={4} 
         mb={4} 
@@ -46,6 +47,7 @@ export default function CustomTable({
               {title.map((item: string, index: number) => (
                 <Th key={index}>{item}</Th>
               ))}
+
             </Tr>
           </Thead>
           <Tbody>
