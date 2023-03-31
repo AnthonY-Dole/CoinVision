@@ -4,26 +4,13 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   useColorModeValue,
   
 } from '@chakra-ui/react';
 import logo from '@/assets/logo.png';
 import { Input } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}>
-    {children}
-  </Link>
-);
 
 export default function withAction() {
 
@@ -34,28 +21,17 @@ export default function withAction() {
          
           <HStack spacing={8} alignItems={'center'}>
 
-            <Box>
+           <Link to="/">
               <Avatar
                 size={'lg'}
                 src={logo}
               />
-            </Box>
-            
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </HStack>
-            <Input variant='outline' placeholder='Search' />
+            </Link>
+
+            <Input variant='outline' placeholder='Search'  />
           </HStack>
           
         </Flex>
-        
-
-       
       </Box>
 
       
