@@ -7,7 +7,7 @@ type Props = {};
 const Detail = ({}: Props) => {
   const { state } = useLocation();
   const [data, setData] = useState([]);
-  const { id, price, marketCap } = state.data;
+  const { id, price, marketCap } = state?.data;
 
   useEffect(() => {
     getChart(id ?? "").then((res) => {
