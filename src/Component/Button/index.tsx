@@ -2,21 +2,21 @@ import { Button } from "@chakra-ui/button";
 import React from "react";
 
 type CustomButtonProps = {
-  variant?: "ghost" | "solid" | "navBar";
+  variant?: "ghost" | "solid" | "navBar" | "primary";
   stylesProps?: Object;
   children: any;
-  OnClick?: () => void;
+  onClick?: () => void;
 };
 
 export default function CustomButton({
   variant = "solid",
   children,
   stylesProps = {},
-  OnClick,
+  onClick,
 }: CustomButtonProps) {
   return (
-    <Button variant={variant} sx={stylesProps} onClick={OnClick}>
-      {children}{" "}
+    <Button variant={variant} sx={stylesProps} onClick={onClick}>
+      {children}
     </Button>
   );
 }

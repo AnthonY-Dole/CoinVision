@@ -32,8 +32,10 @@ const getCoins = async () => {
   return response;
 };
 
-const getChart = async (id: string) => {
-  const response = await axiosClient.get(`/charts?period=1m&coinId=${id}`);
+const getChart = async (id: string, perdiod: string) => {
+  const response = await axiosClient.get(
+    `/charts?period=${perdiod}&coinId=${id}`
+  );
   return response;
 };
 

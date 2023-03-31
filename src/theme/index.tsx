@@ -19,6 +19,10 @@ const theme = extendTheme({
           backgroundColor: "primary",
           color: "whiteColor",
         },
+        primary: {
+          backgroundColor: "secondary",
+          color: "whiteColor",
+        },
         ghost: {
           color: "secondary",
         },
