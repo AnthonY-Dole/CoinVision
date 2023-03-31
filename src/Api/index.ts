@@ -28,8 +28,13 @@ const ping = async () => {
 };
 
 const getCoins = async () => {
-  const response = await axiosClient.get("/coins?skip=0&limit=20&currency=EUR");
+  const response = await axiosClient.get("/coins?skip=0&currency=EUR");
   return response;
 };
 
-export { ping, getCoins };
+const getChart = async (id: string) => {
+  const response = await axiosClient.get(`/charts?period=1m&coinId=${id}`);
+  return response;
+};
+
+export { ping, getCoins, getChart };
