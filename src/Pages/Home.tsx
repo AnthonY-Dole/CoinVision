@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import Footer from "@/Component/Footer";
+import { useEffect, useState } from "react";
 
 import CustomTable from "@/Component/Table";
 import { getCoins } from "@/Api";
@@ -17,6 +18,7 @@ const Home = ({}: Props) => {
   return (
     <div>
       <CustomTable title={title} data={data} />
+      <Footer/>
     </div>
   );
 };
