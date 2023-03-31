@@ -10,13 +10,11 @@ import {
   Box,
   TableContainer,
   Avatar,
+  Container,
 } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Input } from "@chakra-ui/react";
-
-import { useState } from 'react';
 
 type CustomTableProps = {
   variant?: "simple" | "striped" | "unstyled";
@@ -31,59 +29,65 @@ export default function CustomTable({
   title,
   data,
 }: CustomTableProps) {
-
   const navigate = useNavigate();
 
   return (
-    <TableContainer>
-      <Box mb={4}>
-        
-      </Box>
-      <Table variant="striped" colorScheme="blue">
-        <Thead>
-          <Tr>
-            {title.map((item: string, index: number) => (
-              <Th key={index}>{item}</Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {data.map((item: any, index: number) => (
-            <Tr key={index} onClick={() => navigate(`/detail/${item.id}`)}>
-              <Td>
-                <Avatar src={item.icon} />
-                {item.id}
-              </Td>
-
-              <Td>{item.price.toFixed(2)}€</Td>
-              <Td>{item.rank}</Td>
-              <Td
-                style={{
-                  color: item.priceChange1h > 0 ? "green" : "red",
-                }}
-              >
-                {item.priceChange1h}
-              </Td>
-              <Td
-                style={{
-                  color: item.priceChange1h > 0 ? "green" : "red",
-                }}
-              >
-                {item.priceChange1d}
-              </Td>
-              <Td
-                style={{
-                  color: item.priceChange1h > 0 ? "green" : "red",
-                }}
-              >
-                {" "}
-                {item.priceChange1w}
-              </Td>
-              <Td>{item.marketCap}€</Td>
+      <TableContainer 
+        mt={4} 
+        mb={4} 
+        boxShadow="xl" 
+        borderRadius="2xl"
+        >
+        <Box mb={4}
+        ></Box>
+        <Table>
+          <Thead>
+            <Tr>
+              {title.map((item: string, index: number) => (
+                <Th key={index}>{item}</Th>
+              ))}
             </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </TableContainer>
+          </Thead>
+          <Tbody>
+            {data.map((item: any, index: number) => (
+              <Tr key={index} onClick={() => navigate(`/detail/${item.id}`)}>
+                <Td fontWeight="bold" 
+                display="flex" 
+                alignItems="center"
+                >
+                  <Avatar src={item.icon} mr={2} />
+                  {item.id}
+                </Td>
+
+                <Td>{Intl.NumberFormat("Eu").format(item.price.toFixed(2))}€</Td>
+                <Td>{item.rank}</Td>
+                <Td
+                  style={{
+                    color: item.priceChange1h > 0 ? "green" : "red",
+                  }}
+                >
+                  {item.priceChange1h}
+                </Td>
+                <Td
+                  style={{
+                    color: item.priceChange1h > 0 ? "green" : "red",
+                  }}
+                >
+                  {item.priceChange1d}
+                </Td>
+                <Td
+                  style={{
+                    color: item.priceChange1h > 0 ? "green" : "red",
+                  }}
+                >
+                  {" "}
+                  {item.priceChange1w}
+                </Td>
+                <Td>{Intl.NumberFormat("Eu").format(item.marketCap)}€</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
   );
 }

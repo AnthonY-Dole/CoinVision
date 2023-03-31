@@ -7,7 +7,7 @@ const theme = extendTheme({
     secondary: "#00A8CC",
     darkColor: "#21243D",
     lightColor: "#8695A4",
-    whiteColor: " #FFFFFF",
+    whiteColor: "#FFFFFF",
     backgroundColor: "#E5E5E5",
     backgroundColor2: "#EDF7FA",
     tagColor: "#142850",
@@ -27,6 +27,7 @@ const theme = extendTheme({
           fontSize: "18px",
           lineHeight: "29px",
         },
+
       },
     },
   },
